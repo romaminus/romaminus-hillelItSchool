@@ -29,11 +29,19 @@ for (let i = 10; i <= 100; i+=10) {
 //Дано ціле число (ввести через 'prompt'). З'ясувати, чи просто 
 // воно (простим називається число, більше 1, що не має інших дільників, крім 1 і себе).
 
-let number = prompt('ent numb', 50);
-for (let i = 2; i <= number; i++) { 
-    for (let j = 2; j < i; j++) { 
-      if (i % j == 0) continue; 
+let number = prompt('ent numb', 51);
+
+function integerCheck(num) {
+  for (let i = 2, max = Math.sqrt(num); i <= max; i++) {
+    if(num % i === 0){
+      return false;
     }
-    console.log(i);
-    
+    return num > 1;
   }
+};
+
+if (integerCheck(+number)) {
+  alert('is integer!');
+}else{
+  alert('not an integer');
+}

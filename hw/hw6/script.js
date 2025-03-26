@@ -23,13 +23,33 @@
 //Дано масив з елементами різних типів. Створити функцію яка вираховує середнє 
 // арифметичне лише числових елементів даного масиву.
 
-function middleNumber(arr) {
-    let num = arr.filter(el=>typeof el === 'number');
-    let middle = 0;
-    num.forEach(element => {
-        middle += element;
-    });
-    return middle / num.length;
-}
+// function middleNumber(arr) {
+//     let num = arr.filter(el=>typeof el === 'number');
+//     let middle = 0;
+//     num.forEach(element => {
+//         middle += element;
+//     });
+//     return middle / num.length;
+// }
 
-console.log(middleNumber([1, 5, 4, 'gjk', true, null, 6,]));
+// console.log(middleNumber([1, 5, 4, 'gjk', true, null, 6,]));
+
+
+//                        6.3
+//Реалізуйте функцію removeElement(array, item), щоб видалити елемент item з масиву array.
+//Наприклад:
+//const array = [1, 3, 4, 6, 2, 5, 7];
+//removeElement(array,4);
+//console.log(array); // Результат: [1, 3, 6, 2, 5, 7]
+
+function removeElement(array, item){
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === item) {
+            array.splice(i, 1);
+        }
+    }
+    return array;
+}
+const array = [1, 3, 4, 6, 2, 5, 7];
+removeElement(array, 4);
+console.log(array);

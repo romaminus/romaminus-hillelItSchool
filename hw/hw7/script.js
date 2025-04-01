@@ -52,6 +52,7 @@
 // текст або цикл закінчує всі ітерації, то функція виводить в консоль останній введення користувача і завершує функцію.
 
 let userUnswer = prompt('Введіть число > 100:', '100');
+
 function checkValue(value) {
     if (typeof value === 'number') {
         if (value > 100) {
@@ -66,14 +67,17 @@ function checkValue(value) {
     }
 };
 
-for (let i = 0; i <= 9; i++) {
-    if (checkValue(+userUnswer)) {
-        console.log(userUnswer);
-        break;
-    }else if(i == 9){
-        console.log(userUnswer);
-    }else{
-        alert('Будь ласка, введіть Ваше число заново!');
-        userUnswer = prompt('Введіть число > 100:', '100');
-    }
+function checkNumber(param) {
+    for (let i = 0; i <= 9; i++) {
+        if (checkValue(+param)) {
+            console.log(param);
+            break;
+        }else if(i == 9){
+            console.log(param);
+        }else{
+            alert('Будь ласка, введіть Ваше число заново!');
+            param = prompt('Введіть число > 100:', '100');
+        }
+    };
 };
+checkNumber(userUnswer);

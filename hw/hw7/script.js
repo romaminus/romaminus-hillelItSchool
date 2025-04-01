@@ -28,20 +28,52 @@
 // Створити функцію для розрахунку добутку двох чисел, що викликається так: 
 // name(5)(2). Функція повинна повертати результат (у середині функції не має бути консоль лога!)
 
-function curry(f) {
-    return function(a) {
-      return function(b) {
-        return f(a, b);
-      };
-    };
-  }
+// function curry(f) {
+//     return function(a) {
+//         // var1 = a
+//       return function(b) {
+//         // var2 = b
+//         return f(a, b);
+//       };
+//     };
+//   }
 
-function summ(a, b) {
-    return a * b;
-  }
-let curriedSum = curry(summ);
+// function summ(a, b) {
+//     return a * b;
+//   }
+// let curriedSum = curry(summ);
 
-alert( curriedSum(5)(2) );
+// alert( curriedSum(5)(2) );
 
 
 //                  7.3
+//Цикл на кожній ітерації пропонує через prompt ввести число більше 100 (але максимум 10 ітерацій циклу) . 
+// Якщо відвідувач ввів число менше ста – попросити ввести ще раз, і таке інше. Якщо користувач вводить більше ста, 
+// текст або цикл закінчує всі ітерації, то функція виводить в консоль останній введення користувача і завершує функцію.
+
+let userUnswer = prompt('Введіть число > 100:', '100');
+function checkValue(value) {
+    if (typeof value === 'number') {
+        if (value > 100) {
+            return true;
+        } else if(isNaN(value)){
+            return true;
+        } else{
+            return false;
+        }
+    } else {
+        return false;
+    }
+};
+
+for (let i = 0; i <= 9; i++) {
+    if (checkValue(+userUnswer)) {
+        console.log(userUnswer);
+        break;
+    }else if(i == 9){
+        console.log(userUnswer);
+    }else{
+        alert('Будь ласка, введіть Ваше число заново!');
+        userUnswer = prompt('Введіть число > 100:', '100');
+    }
+};

@@ -1,5 +1,6 @@
 'use strict';
 
+//     Варіант 1 (згідно з уроком)
 let company = {
     sales: [{
         name: 'John',
@@ -29,6 +30,25 @@ let company = {
     }
 };
 
+
+function getSalary(obj) {
+    let salaryArr = [];
+    for (const key in obj) {
+        if (Array.isArray(obj[key])) {
+            obj[key].forEach(el=>{
+                salaryArr.push(el.salary);
+            })
+        }else{
+            salaryArr = salaryArr.concat(getSalary(obj[key]));
+        }
+    };
+    return salaryArr;
+};
+
+console.log(getSalary(company).reduce((accumulator, currentValue) => accumulator + currentValue));
+
+//   Варінт 2. Питання: чи рахується це рішення рекурсивним викликом?
+
 function calcSalary(object) {
     let salaryArr = [];
 
@@ -51,3 +71,5 @@ function calcSalary(object) {
 
 
 console.log(calcSalary(company));
+
+

@@ -23,7 +23,7 @@ const btnContainer = document.querySelector('.container');
 
 btnContainer.addEventListener('click', function(event){
     let target = event.target;
-    console.log(`Клікнуто на кнопці: ${target.innerText}`);
+    alert(`Клікнуто на кнопці: ${target.innerText}`);
     
 });
 

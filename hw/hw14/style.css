@@ -1,0 +1,96 @@
+button{
+    cursor: pointer;
+}
+.slider__wrapper {
+    width: 1200px;
+    height: 100vh;
+    background-color: aliceblue;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.slider_item{
+    display: none;
+}
+.active{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    border: 2px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    transition: all 1s;
+}
+
+.slider_img {
+    width: 25%;
+}
+.slider_content {
+    display: flex;
+    flex-direction: column;
+}
+.slider_title {
+    font-weight: bold;
+    font-size: 34px;
+}
+.slider_text {
+    font-size: 18px;
+}
+.slider_nav {
+}
+.arrow_left,
+.arrow_right{
+    font-size: 35px;
+    font-weight: bold;
+    color: aliceblue;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    background-color: blue;
+    cursor: pointer;
+}
+.arrow_left {
+    position: absolute;
+    left: 10px;
+}
+.prev {
+}
+.arrow_right {
+    position: absolute;
+    right: 10px;
+}
+.next {
+}
+.nav_point {
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lightskyblue;
+    border: 2px solid blue;
+    border-radius: 15px;
+    padding: 10px 15px;
+}
+.dot,
+.active_dot{
+    width: 15px;
+    height: 15px;
+    background-color: aliceblue;
+    border-radius: 50px;
+    border: 1px solid blue;
+}
+.active_dot{
+    background-color: blue;
+}

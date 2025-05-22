@@ -1,0 +1,74 @@
+body{
+    box-sizing: border-box;
+    background-color: skyblue;
+    color: black;
+}
+.container {
+    margin: 0 auto;
+    padding: 25px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.general_box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+.target_box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+.date {
+    font-size: 32px;
+    text-transform: capitalize;
+}
+.country,
+.weather_data,
+.feels_like,
+.visible,
+.last_update {
+    font-size: 24px;
+}
+.time {
+    font-size: 60px;
+}
+.time span{
+    font-size: 34px;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.weather_img img{
+    width: 14vw;
+}
+.temp {
+    font-size: 34px;
+    font-weight: bold;
+}
+.feels_like {
+}
+.visible {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.last_update{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.select{
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}

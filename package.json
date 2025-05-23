@@ -1,0 +1,23 @@
+{
+  "name": "hw20",
+  "version": "1.0.0",
+  "description": "reworked hw from bootstrap and jQuery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romaminus/romaminus-hillelItSchool.git#main"
+  },
+  "author": "Roman Belov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romaminus/romaminus-hillelItSchool/issues"
+  },
+  "homepage": "https://github.com/romaminus/romaminus-hillelItSchool/tree/main#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.6",
+    "jquery": "^3.7.1"
+  }
+}

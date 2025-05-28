@@ -4,6 +4,7 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build-js": "babel js --out-dir lib"
   },
   "author": "",
   "license": "ISC",
@@ -12,5 +13,10 @@
     "bootstrap": "^5.3.6",
     "jquery": "^3.7.1",
     "sass": "^1.89.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.27.2",
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2"
   }
 }

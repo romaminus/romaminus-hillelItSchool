@@ -2,6 +2,26 @@
 const express = require('express');
 // const os = require('node:os');
 const cors = require('cors');
+const TodosModel = require('./ToDoScheme');
+const mongoose = require('mongoose');
+
+const uri = "mongodb+srv://romaminus19:WM1B4wGL35bB7RcI@cluster0.gnlm7om.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
+
+async function run() {
+  try {
+    // Create a Mongoose client with a MongoClientOptions object to set the Stable API version
+    await mongoose.connect(uri, clientOptions);
+    await mongoose.connection.db.admin().command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await mongoose.disconnect();
+  }
+}
+run().catch(console.dir);
+
 
 // console.log(os.cpus());
 let TODOS = [
@@ -39,8 +59,15 @@ app.get('/', (req, res)=>{
     res.send('<h1 style="color: green">Express host: 5000</h1>')
 });
 
-app.get('/todos', (req, res)=>{
-    res.send(TODOS);
+app.get('/todos', async (req, res)=>{
+  try {
+    const todos = await TodosModel.find();
+    res.send(todos)
+  } catch (error) {
+    console.error('Error featching todos:', error);
+    res.status(500).send('Internal Server Error')
+  }
+    // res.send(TODOS);
 });
 
 app.post('/todos', (req, res)=>{

@@ -30,7 +30,7 @@ function App() {
           <Smile src={imageMap.mars} id='mars'></Smile>
           <Smile src={imageMap.open} id='open'></Smile>
         </div>
-        <Winner id='withoutNumber'></Winner>
+        <Winner id='crown'></Winner>
       </div>
     </>
   )

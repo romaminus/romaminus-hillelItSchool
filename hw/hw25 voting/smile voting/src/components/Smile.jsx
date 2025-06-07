@@ -17,7 +17,6 @@ export class Smile extends React.Component{
     }
     componentDidUpdate () {
         localStorage.setItem(this.props.id, this.state.count);
-            // localStorage.clear()
     }
     
     render(){
@@ -25,9 +24,9 @@ export class Smile extends React.Component{
         
         return (
             <div className="smile-item" onClick={this.progresCount}>
-                <img src={src} alt="smile img"></img>
+                <img src={src} alt={`${id} smile img`}></img>
                 <p className="item-progres">
-                    {id !== 'withoutNumber' ? this.state.count : ''}
+                    {id !== 'crown' ? this.state.count : ''}
                 </p>
             </div>
         );

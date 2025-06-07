@@ -1,0 +1,61 @@
+body{
+  box-sizing: border-box;
+  text-transform: capitalize;
+  font-style: italic;
+}
+.container {
+  max-width: 1180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin: 0 auto;
+}
+.smile-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.smile-item {
+  min-width: 80px;
+  max-width: 150px;
+  position: relative;
+}
+.smile-item img{
+  width: 100%;
+  height: auto;
+}
+.item-progres {
+  position: absolute;
+  bottom: -25%;
+  right: -15%;
+  font-size: 45px;
+  font-weight: bold;
+  font-family: "Knewave", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #bb2f3a;
+}
+.btn {
+  margin: 20px;
+  padding: 20px;
+  background-color: rgb(60, 179, 60);
+  color: aliceblue;
+  border-radius: 30px;
+  text-transform: capitalize;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+.winner-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.vote-num {
+  font-size: 20px;
+  font-weight: bold;
+}

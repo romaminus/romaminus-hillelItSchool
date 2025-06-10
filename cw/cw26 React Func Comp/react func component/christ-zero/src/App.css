@@ -1,0 +1,41 @@
+body{
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+.game{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+.status{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.board{
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-gap: 5px;
+}
+.square{
+  width: 80px;
+  height: 80px;
+  border: 1px solid darkgray;
+  transition: all .3s ease-in-out;
+}
+.square:hover{
+  border: 2px solid plum;
+  box-shadow: 5px 5px 5px plum;
+}
+.winner{
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+}
+.restart-btn{
+  background-color: plum;
+}

@@ -1,0 +1,16 @@
+.dark{
+    background-color: #454343;
+    color: white
+}
+.light{
+    background-color: #f2e1b6;
+}
+.header-container{
+    height: 10vh;
+}
+.container-height{
+    min-height: 75vh;
+}
+.footer-container{
+    height: 15vh;
+}

@@ -1,25 +1,20 @@
 import { useEffect, useState } from "react";
-// Якщо ToDoCard буде використовуватися, розкоментуйте його імпорт
-// import ToDoCard from "../components/ToDoCard";
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Імпорт Bootstrap JS для модального вікна
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
 
 function HomePage() {
     const [todos, setTodos] = useState([]);
     const [inputValue, setInputValue] = useState("");
     const [selectedTaskText, setSelectedTaskText] = useState("");
 
-    // Завантаження завдань з localStorage при першому рендері
     useEffect(() => {
         const storedTodos = JSON.parse(localStorage.getItem('list')) || [];
         setTodos(storedTodos);
     }, []);
 
-    // Збереження завдань у localStorage при кожній зміні 'todos'
     useEffect(() => {
         localStorage.setItem('list', JSON.stringify(todos));
     }, [todos]);
 
-    // Обробник відправки форми для додавання нового завдання
     const handleAddTodo = (e) => {
         e.preventDefault();
         const trimmedValue = inputValue.trim();
@@ -37,10 +32,9 @@ function HomePage() {
         };
 
         setTodos(prevTodos => [...prevTodos, newItem]);
-        setInputValue(""); // Очищення поля вводу
+        setInputValue("");
     };
 
-    // Обробник зміни стану checkbox (виконано/не виконано)
     const handleToggleCheck = (id) => {
         setTodos(prevTodos =>
             prevTodos.map(todo =>
@@ -49,15 +43,12 @@ function HomePage() {
         );
     };
 
-    // Обробник видалення завдання
     const handleDeleteTodo = (id) => {
         setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
     };
 
-    // Обробник натискання на текст завдання для відкриття модального вікна
     const handleTaskClick = (text) => {
         setSelectedTaskText(text);
-        // Використовуємо нативний JS для показу модального вікна Bootstrap
         const taskModal = new window.bootstrap.Modal(document.getElementById('taskModal'));
         taskModal.show();
     };

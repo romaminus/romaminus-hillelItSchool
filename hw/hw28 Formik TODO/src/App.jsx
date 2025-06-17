@@ -24,10 +24,6 @@ function App() {
     const updatedTodos = [...todos, newTodo];
     setTodos(updatedTodos);
     localStorage.setItem("todos", JSON.stringify(updatedTodos));
-    console.log(
-      `Завдання "${newTodoText}" додано. Поточні todos:`,
-      updatedTodos
-    );
     // localStorage.clear()
   };
 
@@ -37,14 +33,12 @@ function App() {
     );
     setTodos(updatedTodos);
     updateLocalStorage(updatedTodos);
-    console.log(`Статус завдання з ID ${idToToggle} змінено.`);
   };
 
   const removeTodo = (idToRemove) => {
     const updatedTodos = todos.filter((todo) => todo.id !== idToRemove);
     setTodos(updatedTodos);
     localStorage.setItem("todos", JSON.stringify(updatedTodos));
-    console.log(`Завдання з ID ${idToRemove} видалено.`);
   };
 
   return (

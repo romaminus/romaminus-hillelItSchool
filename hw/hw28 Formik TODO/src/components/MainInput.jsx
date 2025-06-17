@@ -1,17 +1,5 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
-const addTodoToLocalStorage = (todoText) => {
-  const todos = JSON.parse(localStorage.getItem("todos")) || [];
-  const newTodo = {
-    id: Date.now(),
-    text: todoText,
-    checked: false
-  };
-  todos.push(newTodo);
-  localStorage.setItem("todos", JSON.stringify(todos));
-  console.log(`Завдання "${todoText}" додано до localStorage.`);
-//   localStorage.clear()
-};
 
 function MainInput({onAddTodo}) {
   const validationSchema = Yup.object({

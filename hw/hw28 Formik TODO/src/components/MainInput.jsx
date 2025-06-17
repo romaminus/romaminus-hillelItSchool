@@ -17,8 +17,8 @@ function MainInput({onAddTodo}) {
   const validationSchema = Yup.object({
     todo: Yup.string()
       .trim()
-      .min(1, "Завдання не може бути порожнім")
-      .required("Будь ласка, введіть завдання"),
+      .min(5, "Todo must be at least 5 characters long")
+      .required("Please enter a todo"),
   });
   const formik = useFormik({
     initialValues: {

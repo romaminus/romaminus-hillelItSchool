@@ -17,7 +17,9 @@ const dataSlice = createSlice({
     error: null
   },
   reducers: {
-    
+    remove: state=>{
+        state.data = null;
+    }
   },
   extraReducers: builder => {
     builder
@@ -36,4 +38,5 @@ const dataSlice = createSlice({
   }
 });
 
+export const {remove} = dataSlice.actions;
 export default dataSlice.reducer;
